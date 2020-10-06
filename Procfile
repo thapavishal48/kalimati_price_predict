@@ -1,0 +1,1 @@
+web: gunicorn kalimati_price_predict.wsgi
