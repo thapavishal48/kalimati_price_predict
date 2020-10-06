@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+  <head>
+    <title>Select</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" style="color:#FFFFFF">Welcome</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+  
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="/" class="nav-link" style="color:#FFFFFF">Home</a></li>
+            <li class="nav-item "><a href="/data" class="nav-link" style="color:#FFFFFF">Data</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Component</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="/trend">Trend</a>
+                  <a class="dropdown-item" href="/seasonality">Seasonality</a>
+                  <a class="dropdown-item" href="/residual">Residual</a>
+                  <a class="dropdown-item" href="/observed">Observed</a>
+                </div>
+            </li>
+            <li class="nav-item active"><a href="/select" class="nav-link" style="color:#FFFFFF">Select</a></li>
+            <li class="nav-item"><a href="/team" class="nav-link" style="color:#FFFFFF">Team</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!-- END nav -->
+    <!-- END nav -->
+    
+    <div class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div id="particles-js"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="color:#FFFFFF"><span class="mr-2"><a href="/">Home</a></span> <span>Select</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Select</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <section class="ftco-section">
+      <div class="container">
+
+        <form action="/graph/" id="vegetableSelection" method="POST" style="color: black; text-align:center" >
+            {% csrf_token %}
+            <p><h4>Select a kalimati's fruit/ vegetable/ fish:</h4></p>
+        
+            <select form="vegetableSelection" name="vegetableSelect" id="vegetableSelect" required>
+                <option value="अंगुर(कालो)">अंगुर(कालो)</option>
+                <option value="अंगुर(हरियो)">अंगुर(हरियो)</option>
+                <option value="अदुवा">अदुवा</option>
+                <option value="अनार">अनार</option>
+                <option value="अम्बा">अम्बा</option>
+                <option value="अाँप(दसहरी)">अाँप(दसहरी)</option>
+                <option value="अालु रातो">अालु रातो</option>
+                <option value="अालु सेतो">अालु सेतो</option>
+                <option value="आँप(मालदह)">आँप(मालदह)</option>
+                <option value="आलु रातो(भारतीय)">आलु रातो(भारतीय)</option>
+                <option value="आलु रातो(मुडे)">आलु रातो(मुडे)</option>
+                <option value="इमली">इमली</option>
+                <option value="उखु">उखु</option>
+                <option value="काउली तरार्इ">काउली तरार्इ</option>
+                <option value="काउली स्थानिय">काउली स्थानिय</option>
+                <option value="काक्रो(लोकल)">काक्रो(लोकल)</option>
+                <option value="काक्रो(हाइब्रीड)">काक्रो(हाइब्रीड)</option>
+                <option value="कागती">कागती</option>
+                <option value="किनु">किनु</option>
+                <option value="कुरीलो">कुरीलो</option>
+                <option value="केरा">केरा</option>
+                <option value="कोइरालो">कोइरालो</option>
+                <option value="खरबुजा">खरबुजा</option>
+                <option value="खुर्सानी हरियो(अकबरे)">खुर्सानी हरियो(अकबरे)</option>
+                <option value="खुर्सानी हरियो(बुलेट)">खुर्सानी हरियो(बुलेट)</option>
+                <option value="खुर्सानी हरियो(माछे)">खुर्सानी हरियो(माछे)</option>
+                <option value="खु्र्सानी सुकेको">खु्र्सानी सुकेको</option>
+                <option value="खु्र्सानी हरियो">खु्र्सानी हरियो</option>
+                <option value="गाजर(तराई)">गाजर(तराई)</option>
+                <option value="गाजर(लोकल)">गाजर(लोकल)</option>
+                <option value="गान्टे मूला">गान्टे मूला</option>
+                <option value="गुन्दुक">गुन्दुक</option>
+                <option value="गोलभेडा ठूलो(नेपाली)">गोलभेडा ठूलो(नेपाली)</option>
+                <option value="गोलभेडा सानो">गोलभेडा सानो</option>
+                <option value="गोलभेडा सानो(टनेल)">गोलभेडा सानो(टनेल)</option>
+                <option value="गोलभेडा सानो(तराई)">गोलभेडा सानो(तराई)</option>
+                <option value="गोलभेडा सानो(भारतीय)">गोलभेडा सानो(भारतीय)</option>
+                <option value="ग्याठ कोबी">ग्याठ कोबी</option>
+                <option value="घिउ सिमी(राजमा)">घिउ सिमी(राजमा)</option>
+                <option value="घिउ सिमी(लोकल)">घिउ सिमी(लोकल)</option>
+                <option value="घिउ सिमी(हाइब्रीड)">घिउ सिमी(हाइब्रीड))</option>
+                <option value="घिरौला">घिरौला</option>
+                <option value="चमसूरको साग">चमसूरको साग</option>
+                <option value="चाक्सी">चाक्सी</option>
+                <option value="चिचिण्डो">चिचिण्डो</option>
+                <option value="चुकुन्दर">चुकुन्दर</option>
+                <option value="च्याउ(कन्य)">च्याउ(कन्य)</option>
+                <option value="च्याउ(डल्ले)">च्याउ(डल्ले)</option>
+                <option value="छ्यापी सुकेको">छ्यापी सुकेको</option>
+                <option value="छ्यापी हरियो">छ्यापी हरियो</option>
+                <option value="जिरीको साग">जिरीको साग</option>
+                <option value="जुनार">जुनार</option>
+                <option value="झिगूनी">झिगूनी</option>
+                <option value="टाटे सिमी">टाटे सिमी</option>
+                <option value="ठूलो गोलभेडा(भारतीय)">ठूलो गोलभेडा(भारतीय)</option>
+                <option value="तरबुजा(पाटे)">तरबुजा(पाटे)</option>
+                <option value="तरबुजा(हरियो)">तरबुजा(हरियो)</option>
+                <option value="तरुल">तरुल</option>
+                <option value="ताजा माछा(छडी)">ताजा माछा(छडी)</option>
+                <option value="ताजा माछा(बचुवा)">ताजा माछा(बचुवा)</option>
+                <option value="ताजा माछा(म\u200cंुगरी)">ताजा माछा(म\u200cंुगरी)</option>
+                <option value="ताजा माछा(रहु)">ताजा माछा(रहु)</option>
+                <option value="तामा">तामा</option>
+                <option value="तितो करेला">तितो करेला</option>
+                <option value="तोफु">तोफु</option>
+                <option value="तोरीको साग">तोरीको साग</option>
+                <option value="नासपाती(चाइनिज)">नासपाती(चाइनिज)</option>
+                <option value="नासपाती(लोकल)">नासपाती(लोकल)</option>
+                <option value="निबुवा">निबुवा</option>
+                <option value="न्यूरो">न्यूरो</option>
+                <option value="परवर(तराई)">परवर(तराई)</option>
+                <option value="परवर(लोकल)">परवर(लोकल)</option>
+                <option value="पार्सले">पार्सले</option>
+                <option value="पालूगो साग">पालूगो साग</option>
+                <option value="पिंडालू">पिंडालू</option>
+                <option value="पुदीना">पुदीना</option>
+                <option value="प्याज सुकेको भारतीय">प्याज सुकेको भारतीय</option>
+                <option value="प्याज हरियो">प्याज हरियो</option>
+                <option value="फर्सी पाकेको">फर्सी पाकेको</option>
+                <option value="फर्सी हरियो(लाम्चो)">फर्सी हरियो(लाम्चो)</option>
+                <option value="बकूला">बकूला</option>
+                <option value="बन्दा(तराई)">बन्दा(तराई)</option>
+                <option value="बन्दा(नरिवल)">बन्दा(नरिवल)</option>
+                <option value="बन्दा(लोकल)">बन्दा(लोकल)</option>
+                <option value="बरेला">बरेला</option>
+                <option value="बोडी(तने)">बोडी(तने)</option>
+                <option value="ब्रोकाउली">ब्रोकाउली</option>
+                <option value="भटमासकोशा">भटमासकोशा</option>
+                <option value="भन्टा डल्लो">भन्टा डल्लो</option>
+                <option value="भन्टा लाम्चो">भन्टा लाम्चो</option>
+                <option value="भिण्डी">भिण्डी</option>
+                <option value="भुर्इ कटहर">भुर्इ कटहर</option>
+                <option value="भेडे खु्र्सानी">भेडे खु्र्सानी</option>
+                <option value="मकै बोडी">मकै बोडी</option>
+                <option value="मटरकोशा">मटरकोशा</option>
+                <option value="माछा ताजा">माछा ताजा</option>
+                <option value="मूला रातो">मूला रातो</option>
+                <option value="मूला सेतो(लोकल)">मूला सेतो(लोकल)</option>
+                <option value="मेथीको साग">मेथीको साग</option>
+                <option value="मेवा(नेपाली)">मेवा(नेपाली)</option>
+                <option value="मेवा(भारतीय)">मेवा(भारतीय)</option>
+                <option value="मौसम">मौसम</option>
+                <option value="रातो बन्दा">रातो बन्दा</option>
+                <option value="रायो साग">रायो साग</option>
+                <option value="रुख कटहर">रुख कटहर</option>
+                <option value="लप्सी">लप्सी</option>
+                <option value="लसुन सुकेको चाइनिज">लसुन सुकेको चाइनिज</option>
+                <option value="लसुन सुकेको नेपाली">लसुन सुकेको नेपाली</option>
+                <option value="लसुन हरियो">लसुन हरियो</option>
+                <option value="लीच्ची(भारतीय)">लीच्ची(भारतीय)</option>
+                <option value="लीच्ची(लोकल)">लीच्ची(लोकल)</option>
+                <option value="लौका">लौका</option>
+                <option value="सखरखण्ड">सखरखण्ड</option>
+                <option value="सजिवन">सजिवन</option>
+                <option value="सलगम">सलगम</option>
+                <option value="सुकेको प्याज चाइनिज">सुकेको प्याज चाइनिज</option>
+                <option value="सुन्तला(नेपाली)">सुन्तला(नेपाली)</option>
+                <option value="सुन्तला(भारतीय)">सुन्तला(भारतीय)</option>
+                <option value="सेतो मूला(हाइब्रीड)">सेतो मूला(हाइब्रीड)</option>
+                <option value="सेलरी">सेलरी</option>
+                <option value="सौफको साग">सौफको साग</option>
+                <option value="स्कूस">स्कूस</option>
+                <option value="स्ट्रबेरी भुर्इएेसेलु">स्ट्रबेरी भुर्इएेसेलु</option>
+                <option value="स्थानीय काउली(ज्यापु)">स्थानीय काउली(ज्यापु)</option>
+                <option value="स्याउ(झोले)">स्याउ(झोले)</option>
+                <option value="स्याउ(फूजी)">स्याउ(फूजी)</option>
+                <option value="हरियो धनिया">हरियो धनिया</option>
+                <option value="हरियो फर्सी(डल्लो)">हरियो फर्सी(डल्लो)</option>
+            </select>
+            <br>
+            <input class="button" type="submit" value="Submit">
+        </form>
+
+        
+      </div>
+    </section>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/particles.min.js' %}"></script>
+  <script src="{% static 'js/particle.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false' %}"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+    
+  </body>
+</html>
