@@ -26,8 +26,7 @@ SECRET_KEY = 'p3^&gp9(fu%7ui)igg6e*s2dlnbx8a8szht88)3duc2v(0+epj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kalimati-tarkari-price-predict.herokuapp.com']
-
+ALLOWED_HOSTS = []
 
 # Application definition
 
