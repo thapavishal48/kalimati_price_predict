@@ -27,7 +27,7 @@ def select_veg(request):
 
 def pickle_training_testing(request):
     veg_name = request.POST['vegetableSelect']
-    data_processing = DataPreprocessing("/home/lenevo/kalimati_price_predict/home/data/kalimati_price_list.csv")
+    data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
     data_train_test = TrainingTesting(data_processing)
 
     fig = go.Figure()
@@ -58,7 +58,7 @@ def team(request):
 
 
 def time_series_trend(request):
-    data_processing = DataPreprocessing("/home/lenevo/kalimati_price_predict/home/data/kalimati_price_list.csv")
+    data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
 
     y = data_processing.data1['Average'].resample('W').mean()
     decomposition = sm.tsa.seasonal_decompose(y, model='additive')
@@ -69,7 +69,7 @@ def time_series_trend(request):
 
 
 def time_series_seasonal(request):
-    data_processing = DataPreprocessing("/home/lenevo/kalimati_price_predict/home/data/kalimati_price_list.csv")
+    data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
 
     y = data_processing.data1['Average'].resample('W').mean()
     decomposition = sm.tsa.seasonal_decompose(y, model='additive')
@@ -81,7 +81,7 @@ def time_series_seasonal(request):
 
 
 def time_series_residual(request):
-    data_processing = DataPreprocessing("/home/lenevo/kalimati_price_predict/home/data/kalimati_price_list.csv")
+    data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
 
     y = data_processing.data1['Average'].resample('W').mean()
     decomposition = sm.tsa.seasonal_decompose(y, model='additive')
@@ -93,7 +93,7 @@ def time_series_residual(request):
 
 
 def time_series_observed(request):
-    data_processing = DataPreprocessing("/home/lenevo/kalimati_price_predict/home/data/kalimati_price_list.csv")
+    data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
     y = data_processing.data1['Average'].resample('W').mean()
     decomposition = sm.tsa.seasonal_decompose(y, model='additive')
 

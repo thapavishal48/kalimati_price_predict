@@ -8,13 +8,13 @@ class TrainingTesting:
     def __init__(self, data_processing):
         self.data_processing = data_processing
 
-        pickle_off = open("/home/lenevo/kalimati_price_predict/home/data/final_W.pickle", 'rb')
+        pickle_off = open("./home/data/final_W.pickle", 'rb')
         final_W = pickle.load(pickle_off)
 
-        pickle_off_X_test = open("/home/lenevo/kalimati_price_predict/home/data/X_test.pickle", 'rb')
+        pickle_off_X_test = open("./home/data/X_test.pickle", 'rb')
         X_test = pickle.load(pickle_off_X_test)
 
-        pickle_off_y_test = open("/home/lenevo/kalimati_price_predict/home/data/y_test.pickle", 'rb')
+        pickle_off_y_test = open("./home/data/y_test.pickle", 'rb')
         y_test = pickle.load(pickle_off_y_test)
 
         y_ = X_test.dot(final_W)
