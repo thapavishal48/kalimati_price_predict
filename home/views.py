@@ -34,6 +34,8 @@ def pickle_training_testing(request):
     data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
     data_train_test = TrainingTesting(data_processing)
 
+    print("VEGETABLE NAME", veg_name)
+    
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=data_train_test.df1[(data_train_test.df1.Items == veg_name)].index,
