@@ -24,8 +24,12 @@ def kalimati_data(request):
 def select_veg(request):
     return render(request, "select_veg.html")
 
+from jinja2 import Template, Environment, FileSystemLoader
+from plotly.offline import plot
+from plotly.graph_objs import Scatter
 
 def pickle_training_testing(request):
+
     veg_name = request.POST['vegetableSelect']
     data_processing = DataPreprocessing("./home/data/kalimati_price_list.csv")
     data_train_test = TrainingTesting(data_processing)
@@ -48,7 +52,8 @@ def pickle_training_testing(request):
     fig.update_traces(mode='markers', marker_line_width=2, marker_size=10)
     fig.update_layout(title=veg_name,
                       yaxis_zeroline=False, xaxis_zeroline=False)
-    fig.show()
+
+    fig.write_html('graph.html', auto_open=True)
 
     return HttpResponseRedirect('/select/')
 
