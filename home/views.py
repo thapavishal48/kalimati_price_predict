@@ -54,7 +54,7 @@ def pickle_training_testing(request):
     fig.update_layout(title=veg_name,
                       yaxis_zeroline=False, xaxis_zeroline=False)
 
-    fig.write_html('./graph.html', auto_open=True)
+    fig.write_html('graph_show/veg_graph.html', auto_open=True)
 
     return HttpResponseRedirect('/select/')
 
