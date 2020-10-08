@@ -6,8 +6,6 @@ from django.http import HttpResponseRedirect
 import plotly.graph_objects as go
 import plotly.express as px
 import statsmodels.api as sm
-
-
 # import numpy as np
 # from django.http import HttpResponse
 # Create your views here.
@@ -71,8 +69,10 @@ def time_series_trend(request):
     decomposition = sm.tsa.seasonal_decompose(y, model='additive')
     trend = decomposition.trend
     fig = px.line(trend)
-    fig.show()
-    return HttpResponseRedirect('/')
+    # fig.show()
+    fig.write_html('templates/trend.html', auto_open=False)
+
+    return render(request, "trend.html")
 
 
 def time_series_seasonal(request):
@@ -83,8 +83,10 @@ def time_series_seasonal(request):
 
     seasonal = decomposition.seasonal
     fig = px.line(seasonal)
-    fig.show()
-    return HttpResponseRedirect('/')
+    
+    fig.write_html('templates/seasonal.html', auto_open=False)
+
+    return render(request, "seasonal.html")
 
 
 def time_series_residual(request):
@@ -95,8 +97,9 @@ def time_series_residual(request):
 
     residual = decomposition.resid
     fig = px.line(residual)
-    fig.show()
-    return HttpResponseRedirect('/')
+    fig.write_html('templates/residual.html', auto_open=False)
+
+    return render(request, "residual.html")
 
 
 def time_series_observed(request):
@@ -110,5 +113,6 @@ def time_series_observed(request):
     observed = trend + seasonal + residual
 
     fig = px.line(observed)
-    fig.show()
-    return HttpResponseRedirect('/')
+    ffig.write_html('templates/observed.html', auto_open=False)
+
+    return render(request, "oberved.html")
