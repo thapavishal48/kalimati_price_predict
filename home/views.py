@@ -113,6 +113,6 @@ def time_series_observed(request):
     observed = trend + seasonal + residual
 
     fig = px.line(observed)
-    ffig.write_html('templates/observed.html', auto_open=False)
+    fig.write_html('templates/observed.html', auto_open=False)
 
     return render(request, "oberved.html")
