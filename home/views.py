@@ -112,7 +112,6 @@ def time_series_observed(request):
     residual = decomposition.resid
     observed = trend + seasonal + residual
 
-    fig = px.line(observed)
     fig.write_html('templates/observed.html', auto_open=False)
 
-    return render(request, "templates/oberved.html")
+    return render(request, "observed.html")
