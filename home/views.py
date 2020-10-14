@@ -115,4 +115,4 @@ def time_series_observed(request):
     fig = px.line(observed)
     fig.write_html('templates/observed.html', auto_open=False)
 
-    return render(request, "oberved.html")
+    return render(request, "templates/oberved.html")
